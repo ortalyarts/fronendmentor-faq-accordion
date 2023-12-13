@@ -1,0 +1,145 @@
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+body, h1, h2, h3, h4, p, figure, blockquote, dl, dd, ul {
+  margin: 0;
+}
+html {
+    scroll-behavior: smooth;
+  }
+  /* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+img {
+  vertical-align: middle;
+}
+/* General STYLE */
+:root {
+
+    --color1:hsl(0, 0%, 100%);
+    --color2:hsl(275, 100%, 97%);
+    --color3:hsl(292, 16%, 49%);
+    --color4: hsl(292, 42%, 14%);
+    --sansserif: 'Work Sans', sans-serif;
+}
+h1, h2, h3, ul {
+  padding:0;
+}
+body {
+    text-rendering: optimizeSpeed;
+    text-align:left; 
+    font-family: var(--sansserif);
+    background: var(--color2) url("./assets/images/background-pattern-mobile.svg") no-repeat top center; 
+    background-size: contain;
+    padding:0rem 1.5rem 1rem 1.5rem;
+    min-height: 100vh; 
+    display:flex; flex-direction:column; 
+}
+
+main {
+    max-width:20.438rem;
+    background: var(--color1);
+    display:grid;
+    gap: 0rem;
+    margin: auto;
+    margin-top:8.875rem;
+    padding: 1.62rem 1.62rem 0 1.62rem;
+    border-radius: 0.9rem;
+    box-shadow: 0 0 2rem 0.3rem hsla(0, 0%, 0%, 0.1);
+}
+h1 {
+  font-size:2rem;
+  line-height:2rem;
+  font-weight:700;
+  color:var(--color4);
+}
+h1 img {
+  max-height:1.6rem;
+  width:auto;
+  margin:0 1.4rem 0.3rem 0;
+}
+.accordion-body {
+  display: grid; 
+  grid-template-rows: 0fr;
+  transition: 250ms grid-template-rows ease;
+}
+.accordion-body-active {
+  grid-template-rows: 1fr;
+}
+.accordion-body > div {
+  overflow: hidden;
+}
+.accordion-item {
+  border-bottom: 1px solid var(--color2);
+  cursor: pointer;
+}
+.accordion-item:last-child {
+  border-bottom:none;
+}
+.accordion-title {
+  padding: 1.813rem 2rem 1.813rem 0;
+  background:url("./assets/images/icon-plus.svg") right no-repeat;
+}
+.active {
+  background:url("./assets/images/icon-minus.svg") right no-repeat ;
+}
+.accordion-title h2 {
+  font-size:1.04rem;
+  font-weight:600;
+  color:var(--color4);
+}
+.accordion-title:hover h2 {
+  color:#a828ed;
+}
+.accordion-body p {
+font-size:0.88rem;
+font-weight:400;
+line-height:1.3rem;
+color:var(--color3);
+padding:0 0 1.813rem 0;
+}
+footer {
+  text-align: center;
+  font-size:0.7rem;
+}
+
+
+@media screen and (min-width:45rem) {
+  body {
+    background: var(--color2) url("./assets/images/background-pattern-desktop.svg") no-repeat top center; 
+    background-size:100%;
+  }
+  main {
+    max-width:37.5rem;
+    padding:2.9rem 2.5rem 0 2.5rem;
+    margin:auto;
+    margin-top: 10.4rem;
+  }
+  h1 {
+    font-size:3.63rem;
+    line-height:3.7rem;
+    margin-bottom:0.5rem;
+  }
+  h1 img {
+    max-height:2.5rem;
+    margin:0 1.6rem 0.7rem 0;
+  }
+  .accordion-title {
+    padding: 1.74rem 2rem 1.74rem 0;
+  }
+  .accordion-title h2 {
+    font-size:1.11rem;
+  }
+  .accordion-body p {
+    font-size:1rem;
+    line-height:1.5rem;
+  }
+}
